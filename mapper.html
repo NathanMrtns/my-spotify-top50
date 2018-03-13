@@ -1,0 +1,40 @@
+<script src="//d3js.org/d3.v3.min.js" charset="utf-8"></script>
+
+<script>
+  d3.json("mytopartists.json", function(error, data) {
+    if (error)
+      throw error;
+    printItems(data);
+  });
+
+  function printItems(data) {
+    var graph = {
+      "nodes" : [],
+      "edges":[]
+    }
+    for (i = 0; i < data.items.length; i++) {
+      var artist = data.items[i];
+      artistObj = {
+        "id": artist.id,
+        "name": artist.name,
+        "genres": artist.genres,
+        "img": artist.images[2].url,
+        "url": artist.external_urls.spotify
+      }
+      graph.nodes.push(artistObj)
+      for (genre in artist.genres) {
+        for (a in data.items) {
+          if (data.items[a].genres.indexOf(artist.genres[genre]) != undefined) {
+            var edgeObj = {
+              "source": artist.id,
+              "target": data.items[a].id,
+              "type": artist.genres[genre]
+            }
+            graph.edges.push(edgeObj)
+          }
+        }
+      }
+    }
+    console.log(graph)
+  }
+</script>
