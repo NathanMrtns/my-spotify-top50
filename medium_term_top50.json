@@ -147,7 +147,7 @@
       "href" : null,
       "total" : 7189
     },
-    "genres" : [ ],
+    "genres" : ["mpb"],
     "href" : "https://api.spotify.com/v1/artists/3fXYikoi0LcoQgBItngLxO",
     "id" : "3fXYikoi0LcoQgBItngLxO",
     "images" : [ {
@@ -291,7 +291,7 @@
       "href" : null,
       "total" : 1844162
     },
-    "genres" : [ ],
+    "genres" : ["mpb"],
     "href" : "https://api.spotify.com/v1/artists/1sPg5EHuQXTMElpZ4iUgXe",
     "id" : "1sPg5EHuQXTMElpZ4iUgXe",
     "images" : [ {
@@ -319,7 +319,7 @@
       "href" : null,
       "total" : 8791
     },
-    "genres" : [ ],
+    "genres" : ["mpb"],
     "href" : "https://api.spotify.com/v1/artists/5dk0R5am4zMYmG6uyZwfkW",
     "id" : "5dk0R5am4zMYmG6uyZwfkW",
     "images" : [ {
@@ -375,7 +375,7 @@
       "href" : null,
       "total" : 5057272
     },
-    "genres" : [ ],
+    "genres" : [],
     "href" : "https://api.spotify.com/v1/artists/1elUiq4X7pxej6FRlrEzjM",
     "id" : "1elUiq4X7pxej6FRlrEzjM",
     "images" : [ {
@@ -403,7 +403,7 @@
       "href" : null,
       "total" : 369
     },
-    "genres" : [ ],
+    "genres" : ["indie folk"],
     "href" : "https://api.spotify.com/v1/artists/2CnIQjA5rvfvIbxSiRUsQD",
     "id" : "2CnIQjA5rvfvIbxSiRUsQD",
     "images" : [ {

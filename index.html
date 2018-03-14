@@ -1,4 +1,5 @@
 <!DOCTYPE HTML>
+<meta content="utf-8" http-equiv="encoding">
 <!--
 	Directive by HTML5 UP
 	html5up.net | @ajlkn
@@ -21,8 +22,9 @@
 <div id="header">
     <span class="logo icon fa-spotify"></span>
     <h1>My top 50</h1>
-    <p>Siempre que me preguntan qué tipo de música me gusta he querido responder algo distinto a "de todo" <br>
-        Hice está visualización a partir de mis 50 artistas favoritos para Spotify y quise explorar cómo se relacionan entre ellos
+    <p>
+        Uma análise dos meus TOP 50 Artistas baseados em "afinidade calculada". <br>
+        <i>"Afinidade é uma medida da preferencia esperada que um usuário tem por um artista particular ou uma faixa(música)"</i>
     </p>
 </div>
 
@@ -31,14 +33,27 @@
 
     <div class="box container">
         <section>
-            <p>A continuación se presenta un grafo mostrando las relaciones mencionadas anteriormente.
-                Para resaltar por géneros deslice sus mouse encima de los géneros a la izquierda.
-                En cualquier momento puede deslizar también su mouse encima de un artista para ver con qué otros está relacionado más claramente.
-                Haga click encima de un artista para abrir su página de Spotify en una nueva pestaña.
+            <p>
+                Abaixo é apresentado um grafo mostrando as relações dos artistas por gênero.
+                <br>
+                Para destacar por gêneros deslize o mouse em cima dos gêneros (a esquerda).
+                Para visualizar com quem um determinado artista está relacionado, passe o mouse em cima dele.
             </p>
         </section>
         <section>
-            <svg width="930" height="630">
+                <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                          <label class="input-group-text" for="timeRange">Espaço tempo dos dados (time range)</label>
+                        </div>
+                        <select class="custom-select" id="timeRange" onchange="drawGraph(this.value)">
+                          <option value="long_term_top50.json">Long term (muitos anos)</option>
+                          <option value="medium_term_top50.json">Medium term (aproximadamente 6 últimos meses)</option>
+                          <option value="short_term_top50.json">Short term (últimas 4 semanas)</option>
+                        </select>
+                </div>
+        </section>
+        <section>
+            <svg width="1030" height="730">
                 <defs>
                     <filter id="greyscale">
                         <feColorMatrix
@@ -53,28 +68,60 @@
             </svg>
         </section>
         <header>
-            <h2>Pharrell Williams, mi puente entre el Hip Hop y la electrónica</h2>
+            <h2>Uma breve análise</h2>
         </header>
         <section>
-            <h4>
-                De la visualización podemos concluir varias cosas sobre mis gustos músicales:
-            </h4>
+            <h5>
+                Com os dados de um longo espaço de tempo (anos atrás até os dias atuais) podemos concluir:
+            </h5>
             <ul class="default">
                 <li>
-                    Me gusta bastante varios subgéneros del Hip Hop y del House
+                    Pop é o meu gênero predominante
                 </li>
                 <li>
-                    Pharrell Williams es mi puente entre los dos géneros conectando al Pop con el Pop Rap.
+                    Bandas indie/folk também se destacam e elas são uma ponte entre o rock e o pop na minha lista de artistas.
                 </li>
                 <li>
-                    No salgo de muchos géneros; mi música está altamente conectada entre si.
+                    Forró tá ali, até porque quando se tem 30 dias de São João temos que escutar um forrózinho.
                 </li>
-
+                <li>
+                    Há uma pequena quantidade de artistas que estão aparecendo aos poucos na minha lista, como é o caso de Seu Pereira e Academia da Berlinda. 
+                </li>
+                <li>
+                    MPB não é muito minha praia.
+                </li>
             </ul>
+            <br>
+            <h5>
+                    Com os dados de um médio espaço de tempo (últimos 6 meses) podemos concluir:
+                </h5>
+                <ul class="default">
+                    <li>
+                        O número de artistas pop decaiu e o número de artistas indie/modern-rock aumentaram.
+                    </li>
+                    <li>
+                        Sertanejo e Forró também decairam. E agora, o MPB que não era muito minha praia, começou a crescer.
+                    </li>
+                    <li>
+                        Bastille é a principal ponte entre o pop e o modern rock.
+                    </li>
+                </ul>
+                <br>                
+            <h5>
+                    Com os dados de um curto espaço de tempo (últimas 4 semanas) podemos concluir:
+                </h5>
+                <ul class="default">
+                    <li>
+                        Não tenho escutado muito pop. Parece que houve uma transição do pop para o modern-rock/neo psychedelic, apesar de ainda escutar um pop de vez em quando. Neste grupo em questão, podemos ver que há uma grande mistura de ritmos que se relacionam mas não predomina muito o modern-rock como visto no grafo de médio termo.
+                    </li>
+                    <li>
+                        Ainda há aparições de artistas de sertanejo porém o que tem predominado são artistas MPB. Comparando o grafo de longo e médio espaços de tempo, este grupo cresceu consideravelmente.
+                    </li>
+                </ul>
+                <br>
+                <h4>Podemos dizer que eu não tenho um gosto muito bem definido e que passeio do rock até o forró. Também, posso acrescentar que ultimamente tenho dado mais chance a MPB.</h4>
         </section>
     </div>
-
-
 </div>
 
 <!-- Footer -->
@@ -98,8 +145,8 @@
 <script src="assets/js/util.js"></script>
 <!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
 <script src="assets/js/main.js"></script>
-<script src="https://d3js.org/d3.v4.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/d3-legend/2.24.0/d3-legend.js"></script>
+<script src="scripts/d3.v4.min.js"></script>
+<script src="scripts/d3-legend.js"></script>
 <script src="scripts/music_graph.js"></script>
 
 </body>
